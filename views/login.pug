@@ -1,3 +1,10 @@
 extends main.pug
 block content
      h2 login
+     form(action='/users/login' method='POST')
+          label(for='email' style='display:block;') Email
+               input#email(type='email' name='email' placeholder='Enter Email')
+          label(for='password' style='display:block;') Password
+               input#password(type='password' name='password' placeholder='Enter Password')
+          button(type='submit') Login
+          a(href="/users/register" style='display:block;') Register
