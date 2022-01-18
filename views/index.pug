@@ -7,4 +7,5 @@ head
    a(href="./todos/new") Create
   ul 
     each todo in todos
-      li= todo.name
+      li= todo.name+"  "
+       a(href="./todos/"+todo._id) detail
