@@ -4,11 +4,15 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Todo List
   main
-   a(href="./todos/new") Create
+    a(href="./todos/new") Create
   ul 
     each todo in todos
       li= todo.name+"  "
-       a(href="./todos/"+todo._id) detail 
-       a(href="./todos/"+todo._id+"/edit") edit 
-       form(action="./todos/"+todo._id+"/delete"  method="POST" style="display: inline")
+      if todo.isDone
+        input(type="checkbox" name="isDone" checked disabled)
+      else
+        input(type="checkbox" name="isDone" disabled)
+      a(href="./todos/"+todo._id) detail 
+      a(href="./todos/"+todo._id+"/edit") edit 
+      form(action="./todos/"+todo._id+"/delete" method="POST" style="display: inline")
         button(type="submit") delete
