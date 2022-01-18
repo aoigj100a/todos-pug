@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
+app.set("view engine", "pug");
+
 mongoose.connect("mongodb://localhost/todo-list", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -17,7 +19,7 @@ db.once("open", () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.render("index", { body: "123" });
 });
 
 app.listen(3000, () => {
