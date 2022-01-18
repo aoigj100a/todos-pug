@@ -8,4 +8,5 @@ head
   ul 
     each todo in todos
       li= todo.name+"  "
-       a(href="./todos/"+todo._id) detail
+       a(href="./todos/"+todo._id) detail 
+       a(href="./todos/"+todo._id+"/edit") edit
