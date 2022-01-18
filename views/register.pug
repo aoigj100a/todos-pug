@@ -1,14 +1,14 @@
 extends main.pug
 block content
      h2 Register
-     form(action='/users/login' method='POST')
+     form(action='/users/register' method='POST')
           label(for='name' style='display:block;') Name
-               input#email(type='name' name='name' placeholder='Enter Name')
+               input#name(type='name' name='name' placeholder='Enter Name' value=name)
           label(for='email' style='display:block;') Email
-               input#email(type='email' name='email' placeholder='Enter Email')
+               input#email(type='email' name='email' placeholder='Enter Email' value=email)
           label(for='password' style='display:block;') Password
-               input#password(type='password' name='password' placeholder='Enter Password')
+               input#password(type='password' name='password' placeholder='Enter Password' value=password)
           label(for='confirmPassword' style='display:block;') Confirm Password
-               input#password(type='confirmPassword' name='confirmPassword' placeholder='Enter Confirm Password')
+               input#confirmPassword(type='password' name='confirmPassword' placeholder='Enter Confirm Password' value=confirmPassword)
           button(type='submit') Register
           a(href="/users/login" style='display:block;') Login
