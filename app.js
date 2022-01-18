@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const Todo = require("./models/todo");
 const app = express();
 
 app.set("view engine", "pug");
@@ -19,7 +20,10 @@ db.once("open", () => {
 });
 
 app.get("/", (req, res) => {
-  res.render("index", { body: "123" });
+  Todo.find()
+    .lean()
+    .then((todos) => res.render("index", { todos }))
+    .catch((error) => console.log(error));
 });
 
 app.listen(3000, () => {
