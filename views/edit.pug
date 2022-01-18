@@ -1,8 +1,10 @@
-form(action='/todos/'+todo._id+"?_method=PUT" method='POST')
-  if todo.isDone
-    input(type="checkbox" name="isDone" checked)
-  else
-    input(type="checkbox" name="isDone")
-  input(type='text' placeholder='name' name='name' value=todo.name)
-  button(type='submit') Save
-  a(href='/') back
+extends main.pug
+block content
+  form(action='/todos/'+todo._id+"?_method=PUT" method='POST')
+    if todo.isDone
+      input(type="checkbox" name="isDone" checked)
+    else
+      input(type="checkbox" name="isDone")
+    input(type='text' placeholder='name' name='name' value=todo.name)
+    button(type='submit') Save
+    a(href='/') back

@@ -1,5 +1,7 @@
-p= todo.name
-a(href="/todos/"+todo._id+"/edit") edit
-a(href="/") back 
-form(action="./"+todo._id+"?_method=DELETE" method="POST" style="display: inline")
-     button(type="submit") delete
+extends main.pug
+block content
+     p= todo.name
+     a(href="/todos/"+todo._id+"/edit") edit
+     a(href="/") back 
+     form(action="./"+todo._id+"?_method=DELETE" method="POST" style="display: inline")
+          button(type="submit") delete
