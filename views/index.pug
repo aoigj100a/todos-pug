@@ -9,4 +9,6 @@ head
     each todo in todos
       li= todo.name+"  "
        a(href="./todos/"+todo._id) detail 
-       a(href="./todos/"+todo._id+"/edit") edit
+       a(href="./todos/"+todo._id+"/edit") edit 
+       form(action="./todos/"+todo._id+"/delete"  method="POST" style="display: inline")
+        button(type="submit") delete
