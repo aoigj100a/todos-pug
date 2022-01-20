@@ -20,6 +20,18 @@
 
 ## 登入系統
 
+種子資料中有預設的使用者可以登入：
+
+SEED_USER = {
+name: "root",
+email: "root@example.com",
+password: "12345678",
+};
+
+1. 輸入帳號密碼
+2. 可以使用 todos 功能
+3. 登出的路由 /users/logout
+
 ## 安裝與執行步驟 (Installation and Execution)
 
 1. 將專案複製到本機 (兩種方法)
